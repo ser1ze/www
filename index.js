@@ -524,7 +524,7 @@ const phrases = [
       const body = document.body;
   
       function openModal() {
-          modal.style.display = 'block';
+          modal.style.display = 'flex';
           body.classList.add('modal-open');
       }
   
@@ -569,24 +569,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const buyButton = document.querySelector('.buy-button');
   const modal = document.getElementById('loginModal');
   const closeBtn = document.querySelector('.close');
+  const balance = document.querySelector(".balance")
 
-  calculatorBox.style.opacity = '0';
-  buyButton.style.opacity = '0';
+ 
+  
+  calculatorBox.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
+  balance.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
+  
 
   function show() {
+     
       setTimeout(function() {
-          calculatorBox.style.transition = 'opacity 0.5s ease-in';
           calculatorBox.style.opacity = '1';
+          calculatorBox.style.transform = 'scale(1)';
+          balance.style.opacity = "1"
+          balance.style.transform = "scale(1)"
+          buyButton.style.opacity = '1';
+          buyButton.style.transform = 'scale(1)';
       }, 100);
 
-      setTimeout(function() {
-          buyButton.style.transition = 'opacity 0.5s ease-in';
-          buyButton.style.opacity = '1';
-      }, 100);
+      
+    
   }
 
   function closeModal() {
       modal.style.display = 'none';
+      
       show();
   }
 
@@ -671,6 +679,9 @@ const colors = [
   "#71bdeb"
 ];
 
+let animationStarted = false; // Флаг, чтобы отслеживать, запущена ли анимация
+
+// Инициализация кругов
 circles.forEach(function (circle, index) {
   circle.x = coords.x;
   circle.y = coords.y;
@@ -678,12 +689,19 @@ circles.forEach(function (circle, index) {
   circle.style.backgroundColor = colors[colorIndex % colors.length];
 });
 
+// Обработчик движения мыши
 window.addEventListener("mousemove", function(e) {
   coords.x = e.clientX;
   coords.y = e.clientY;
+
+  // Запускаем анимацию только один раз при первом движении мыши
+  if (!animationStarted) {
+    animationStarted = true;
+    setTimeout(animateCircles, 100);
+  }
 });
 
-// Circles // 
+// Функция анимации кругов
 function animateCircles() {
   let x = coords.x;
   let y = coords.y;
@@ -698,15 +716,13 @@ function animateCircles() {
     circle.y = y;
 
     const nextCircle = circles[index + 1] || circles[0];
-    x += (nextCircle.x - x) * 0.0255;
-    y += (nextCircle.y - y) * 0.0255;
+    x += (nextCircle.x - x) * 0.07;
+    y += (nextCircle.y - y) * 0.07;
   });
 
   requestAnimationFrame(animateCircles);
 }
 
-
-setTimeout(animateCircles, 100); 
 
 
 
