@@ -1519,6 +1519,7 @@ body > div.layout-container > div > div.middle > div.calculator-box > div.calcul
     margin-right: 5px;
     position: absolute;
     overflow: hidden;
+    z-index: 3000;
   }
   
   .close > div {
