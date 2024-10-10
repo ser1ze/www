@@ -127,7 +127,7 @@ body, html {
     height: 70px;
     background: rgba(255, 255, 255, 0.4);
     opacity: 0.9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 10px 7px 30px #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 20px #000000;
     backdrop-filter: blur(5px);
     border-radius: 5px;
     position: absolute;
@@ -434,7 +434,7 @@ pointer-events: none;
     height: 770px;
     width: 1160px;
     background: linear-gradient(270deg, rgba(123, 123, 123, 0.2) 0%, rgba(174, 174, 174, 0.2) 50%, rgba(123, 123, 123, 0.2) 100%);
-    box-shadow: -11px 0px 40px #000000, 11px 0px 40px #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 20px #000000;
     border-radius: 10px;
     position: relative;
 }
@@ -1219,14 +1219,14 @@ z-index: 0
 }
 
 .modal-content {
-    width: 440px;
+    width: 390px;
     height: 420px;
-    filter: drop-shadow(0px 0px 29.3333px #000000);
-    border-radius: 7.33333px;
+    filter: drop-shadow(0px 0px 10px #000000);
+    border-radius: 6px;
     background-color: #fefefe;
     padding: 8px;
-    border: 1px solid #888;
-    background: linear-gradient(314.82deg, rgba(179, 179, 179, 0.85) 9.73%, rgba(220, 220, 220, 0.85) 50%, rgba(178, 178, 178, 0.85) 90.27%);
+    border: 0px solid #888;
+    background: linear-gradient(314.82deg, rgba(179, 179, 179, 0.85) 0.1%, rgba(220, 220, 220, 0.85) 0.1%, rgba(178, 178, 178, 0.85) 0.1%);
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 600;
